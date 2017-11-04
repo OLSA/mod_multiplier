@@ -1,0 +1,123 @@
+/*Multiplier CSS v.1.2*/
+
+ol#outer-list {
+    counter-reset: li;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#outer-list li {
+    position: relative;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #eaeaea;
+    color: #444;
+    text-decoration: none;
+    transition: all .2s ease-out;word-wrap: break-word;
+}
+
+#outer-list span{display:table-row-group;}
+.name{font-weight:bold;float:left;margin-right:5px;}
+.name:after{content:":";}
+
+#outer-list li:hover {
+    background: #f2f2f2;
+}
+
+ol#outer-list li:before {
+    position: absolute;
+    left: -2.5em;
+    top: 0;
+    height: 100%;
+    width: 2em;    
+    content: counter(li);
+    counter-increment: li;
+    background: #4390df;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+#outer-list li:after {
+    position: absolute;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    content: '';
+    border: .5em solid transparent;    
+    transition: all .2s ease-out;
+}
+
+#outer-list li:hover:after {
+    left: -.5em;
+    border-left-color: #4390df;
+}
+
+#outer-list li.selected{background:#4390df;color:#fff;}
+
+.remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1em;
+    background: none repeat scroll 0 0 #777;
+    color: #fff;    
+    font-size: 18px;
+    padding: 5px;        
+    text-align: center;        
+    transition: all .2s ease-out;
+}
+
+.remove:hover, .remove:focus, .remove:active {
+    background: none repeat scroll 0 0 #9a1616;
+    color: #fff;
+    text-decoration: none;    
+}
+
+.edit {
+    position: absolute;
+    top: 0;
+    right: 29px;    
+    background: #777;
+    color: #fff;    
+    font-size: 11px;
+    padding: 5px;        
+    text-align: center;        
+    transition: all .2s ease-out;
+}
+
+.edit:hover, .edit:focus, .edit:active{
+  background:#336699;
+  color: #fff;
+  text-decoration: none;
+}
+
+#overlay {
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    text-align:center;
+    background: rgba(0,0,0,0.5);
+    transition: opacity 200ms;
+}
+
+#popup{
+    position: absolute;    
+    margin:auto;
+    overflow: visible;
+    padding: 20px;
+    text-align: left;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+}
+
+#popup .small{font-size:11px;color:#777;}
